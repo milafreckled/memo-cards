@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  overflow: hidden; }
+
+#banner {
+  width: 100%;
+  position: relative;
+  background-image: url("../img/0.jpg");
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%; }
+
+#banner-text {
+  position: absolute;
+  color: #A0B4C1; }
+
+#banner nav {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px; }
+  #banner nav .nav-link-item {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #A0B4C1; }
+
+/*# sourceMappingURL=style1.css.map */
