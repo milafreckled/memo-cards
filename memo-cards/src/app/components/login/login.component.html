@@ -1,0 +1,48 @@
+
+<div *ngIf="!isLoggedInByEmail()" class="form-wrapper h-100 w-500" >
+  <form class="flex flex-col mt-10 mx-auto h-full-screen content-center w-[500px]" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <h2 class="text-2xl text-center mb-4">Log In</h2>
+    <div class="block">
+      <label for="name" class="text-black-400">Name</label>
+      <input class="py-4 px-2 h-2 focus-within:underline border rounded w-full" 
+      type="text" id="name" name="name"  formControlName="name" />
+    </div>
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-red-400 text-sm mb-4">
+      <div [hidden]="!name?.errors?.['required']">
+        name name is required
+      </div>
+      <div [hidden]="!name?.errors?.['pattern']">
+        Latin letters only
+      </div>
+      </div>
+      <div class="block">
+        <label for="email">Email </label>
+        <input class="py-4 px-2 h-2 border rounded w-full" 
+        type="text" id="email" name="email" formControlName="email" />
+      </div>
+      <div
+      *ngIf="email?.invalid && (email?.dirty || email?.touched)" 
+      class="text-red-400 text-sm mb-4">
+      <div [hidden]="!email?.errors?.['required']">
+      email is required
+      </div>
+      <div [hidden]="!email?.errors?.['pattern']">
+        Wrong email format
+      </div>
+      </div>
+      <button [disabled]="loginForm.invalid" type="submit" class="inline-block text-white mt-2 px-4 py-2 w-full bg-blue-300 rounded hover:shadow-xs">Submit</button>
+      </form>
+      <button type="button" class="go-back-btn rounded px-4 py-2 mx-auto"><a routerLink="">Go back</a></button>
+  </div>
+  <div *ngIf="isLoggedInByEmail()">
+    <h2>{{ loginResponse }}</h2>
+  </div>
+
+  <!-- <div *ngIf="isLoggedIn()">
+    <div class="container">Hi and welcome!</div>
+    <div class="container">Name: {{ userInfo?.info?.name }}</div>
+    <div class="container">Email: {{ userInfo?.info?.email }}</div>
+    <div class="container">Picture: <img src={{ userInfo?.info?.picture }} ></div>
+    <button (click)="logOut()">Log Out</button>
+  </div>
+   -->
