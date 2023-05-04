@@ -5,6 +5,12 @@
 /tmp
 /out-tsc
 /bazel-out
+/mini-projects Python
+/parsing_intensiv
+/server_py
+*.py
+/folderSorting
+/FL19_HW3
 
 # Node
 /node_modules
@@ -44,4 +50,5 @@ Thumbs.db
 # Firebase
 .firebase
 *-debug.log
-.runtimeconfig.json
+.runtimec
+config.json
