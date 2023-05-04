@@ -1,0 +1,15 @@
+nav{
+    position: sticky;
+    width: 100%;
+    display: flex;
+    font-size: 18px;
+    background-color: #fff;
+    box-shadow: -1px 1px #770eb8, 0 0 10px #770eb8;
+    color: var(--primary-color);
+}
+.active-link{
+    height: 100%;
+    padding: .2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+}
